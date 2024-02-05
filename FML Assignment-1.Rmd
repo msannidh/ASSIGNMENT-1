@@ -1,0 +1,100 @@
+---
+title: "FML"
+author: "Manaswini"
+date: "2024-02-05"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+
+#I took this dataset from github, I preferred this dataset because it has both quantitative and qualitative variables.
+
+```{r}
+
+library(readr)
+my_data <- read.csv("C:/Users/Winnie/Downloads/HousePrices.csv")
+
+```
+
+
+summary() function gives brief about the data
+
+```{r}
+
+summary(my_data)
+
+```
+
+#QUANTITATIVE VARIABLE
+here I used summary() function and I have choosen "price" as my quantitative variable.
+```{r}
+
+summary(my_data$price)
+
+```
+
+#QUALITATIVE VARIABLE
+I have choosen lotsize as Qualitative variable.
+
+```{r}
+
+table(my_data$lotsize)
+
+```
+
+#TRANSFORMATION OF QUANTITATIVE VARIABLE
+I have transformed my quantitative variable which is Price.
+
+```{r}
+
+my_data$log_transformed_price <- log(my_data$price)
+head(my_data)
+
+```
+
+#HISTOGRAM
+```{r}
+
+hist(my_data$price)
+
+```
+
+
+
+```{r}
+
+hist(my_data$lotsize)
+
+```
+
+#SCATTERPLOT
+
+```{r}
+
+plot(my_data$price)
+
+```
+
+
+
+```{r}
+
+plot(my_data$lotsize)
+
+```
+
+
+#SCATTERPLOT OF BOTH QUANTITATIVE AND QUALITATIVE VARIABLES
+
+```{r}
+
+plot(my_data$price, my_data$lotsize)
+
+```
+
+
